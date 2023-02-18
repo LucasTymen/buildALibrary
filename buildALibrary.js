@@ -17,20 +17,22 @@ class Media {
     return this._ratings;
   }
 
-  set isCheckedOut(value){
+  set isCheckedOut(value) {
     this._isCheckedOut = value;
   }
 
-  set toggleCheckOutStatus() {
+  set toggleCheckOutStatus(value) {
     this._isCheckedOut = !this.this._isCheckedOut;
   }
 
   getAverageRating() {
-    let ratingsSum = this.ratings.reduce((accumulator, rating) => accumulator + rating);
+    let ratingsSum = this.ratings.reduce(
+      (accumulator, rating) => accumulator + rating
+    );
     return ratingsSum / this.ratings.length;
   }
 
-  addRating(ratings) {
-    this.rating.push(ratings)
+  addRating(value) {
+    this.rating.push(value);
   }
 }
