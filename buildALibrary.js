@@ -43,9 +43,11 @@ class Book extends Media {
     this._author = author;
     this._pages = pages;
   }
+
   get author() {
     return this._author;
   }
+
   get pages() {
     return this._pages;
   }
@@ -57,9 +59,11 @@ class Movie extends Media {
     this._director = director;
     this._runTime = runTime;
   }
+
   get director() {
     return this._director;
   }
+
   get runTime() {
     return this._runTime;
   }
