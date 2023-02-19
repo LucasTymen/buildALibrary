@@ -21,12 +21,12 @@ class Media {
     this._isCheckedOut = value;
   }
 
-  set toggleCheckOutStatus(value) {
-    this._isCheckedOut = !this.this._isCheckedOut;
+  toggleCheckOutStatus() {
+    this._isCheckedOut = !this._isCheckedOut;
   }
 
   getAverageRating() {
-    let ratingsSum = this.ratings.reduce(
+    let ratingsSum = this._ratings.reduce(
       (accumulator, rating) => accumulator + rating
     );
     return ratingsSum / this.ratings.length;
@@ -44,7 +44,7 @@ class Book extends Media {
     this._pages = pages;
   }
   get author() {
-    return this._autor;
+    return this._author;
   }
   get pages() {
     return this._pages;
@@ -52,15 +52,25 @@ class Book extends Media {
 }
 
 class Movie extends Media {
-  constructor(director, title, runtime) {
+  constructor(director, title, runTime) {
     super(title);
     this._director = director;
-    this._runtime = runtime;
+    this._runTime = runTime;
   }
   get director() {
     return this._director;
   }
-  get runtime() {
-    return this._runtime;
+  get runTime() {
+    return this._runTime;
   }
 }
+
+const historyOfEverything = new Book(
+  "Bill Bryson",
+  "A Short History of Nearly Everything",
+  544
+);
+
+historyOfEverything.toggleCheckOutStatus();
+
+console.log(historyOfEverything.isCheckedOut);
