@@ -22,7 +22,7 @@ class Media {
   }
 
   toggleCheckOutStatus() {
-    this._isCheckedOut = !this._isCheckedOut;
+    this.isCheckedOut = !this.isCheckedOut;
   }
 
   getAverageRating() {
@@ -33,7 +33,7 @@ class Media {
   }
 
   addRating(value) {
-    this.rating.push(value);
+    this.ratings.push(value);
   }
 }
 
@@ -43,11 +43,9 @@ class Book extends Media {
     this._author = author;
     this._pages = pages;
   }
-
   get author() {
     return this._author;
   }
-
   get pages() {
     return this._pages;
   }
@@ -59,11 +57,9 @@ class Movie extends Media {
     this._director = director;
     this._runTime = runTime;
   }
-
   get director() {
     return this._director;
   }
-
   get runTime() {
     return this._runTime;
   }
@@ -78,3 +74,18 @@ const historyOfEverything = new Book(
 historyOfEverything.toggleCheckOutStatus();
 
 console.log(historyOfEverything.isCheckedOut);
+historyOfEverything.addRating(4);
+historyOfEverything.addRating(5);
+historyOfEverything.addRating(5);
+
+console.log(historyOfEverything.getAverageRating())
+
+const speed = new Movie('Jan de Bont','Speed',116)
+speed.toggleCheckOutStatus()
+
+console.log(speed.isCheckedOut)
+
+speed.addRating(1);
+speed.addRating(1);
+speed.addRating(5);
+console.log(speed.getAverageRating())
