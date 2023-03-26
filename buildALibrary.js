@@ -80,7 +80,7 @@ historyOfEverything.addRating(5);
 
 console.log(historyOfEverything.getAverageRating())
 
-const speed = new Movie('Jan de Bont', 'Speed', 116)
+const speed = new Movie('Jan de Bont','Speed',116)
 speed.toggleCheckOutStatus()
 
 console.log(speed.isCheckedOut)
